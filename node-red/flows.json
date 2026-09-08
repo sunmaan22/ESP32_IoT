@@ -1,0 +1,1739 @@
+[
+    {
+        "id": "987ee1b44fee7f84",
+        "type": "tab",
+        "label": "ESP32 Home/Away",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "bb91c10fcdc8b02e",
+        "type": "tab",
+        "label": "Sleep Mode",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "mqtt_broker_local",
+        "type": "mqtt-broker",
+        "name": "Local Mosquitto",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "node-red-client",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "ui_tab_home",
+        "type": "ui_tab",
+        "name": "집 모니터링",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ui_group_main",
+        "type": "ui_group",
+        "name": "Home",
+        "tab": "ui_tab_home",
+        "order": 1,
+        "disp": false,
+        "width": "25",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "983b87881e585d84",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#050d19",
+                "baseFont": "Times New Roman,Times,serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#050d19",
+                "baseFont": "Times New Roman,Times,serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#78304d",
+                    "value": "#050d19",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#050d19",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#050d19",
+                    "edited": true
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#050d19",
+                    "edited": true
+                },
+                "group-textColor": {
+                    "value": "#122e59",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#050d19",
+                    "edited": true
+                },
+                "group-backgroundColor": {
+                    "value": "#050d19",
+                    "edited": true
+                },
+                "widget-textColor": {
+                    "value": "#ffffff",
+                    "edited": true
+                },
+                "widget-backgroundColor": {
+                    "value": "#050d19",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#050d19",
+                    "edited": true
+                },
+                "base-font": {
+                    "value": "Times New Roman,Times,serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "eb6bbcca30865829",
+        "type": "ui_tab",
+        "name": "외출 모드",
+        "icon": "fa-shield-alt",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "94be1d80c6a731da",
+        "type": "ui_group",
+        "name": "Away",
+        "tab": "eb6bbcca30865829",
+        "order": 1,
+        "disp": true,
+        "width": "25",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5cb6238b120dd030",
+        "type": "ui_spacer",
+        "z": "987ee1b44fee7f84",
+        "name": "spacer",
+        "group": "ui_group_main",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e87e14339579cd73",
+        "type": "ui_spacer",
+        "z": "987ee1b44fee7f84",
+        "name": "spacer",
+        "group": "ui_group_main",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4e12ae051ce6032e",
+        "type": "ui_spacer",
+        "z": "987ee1b44fee7f84",
+        "name": "spacer",
+        "group": "ui_group_main",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2fa9b3b133ae1623",
+        "type": "ui_spacer",
+        "z": "987ee1b44fee7f84",
+        "name": "spacer",
+        "group": "ui_group_main",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d534d253bcf50edb",
+        "type": "ui_spacer",
+        "z": "987ee1b44fee7f84",
+        "name": "spacer",
+        "group": "ui_group_main",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5363e63b85f01a25",
+        "type": "ui_spacer",
+        "z": "987ee1b44fee7f84",
+        "name": "spacer",
+        "group": "ui_group_main",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d0fa6cd6600bcc11",
+        "type": "ui_spacer",
+        "z": "987ee1b44fee7f84",
+        "name": "spacer",
+        "group": "ui_group_main",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6d1c80319fa44740",
+        "type": "ui_spacer",
+        "z": "987ee1b44fee7f84",
+        "name": "spacer",
+        "group": "94be1d80c6a731da",
+        "order": 7,
+        "width": 25,
+        "height": 1
+    },
+    {
+        "id": "7dff6e5068c901a4",
+        "type": "ui_spacer",
+        "z": "987ee1b44fee7f84",
+        "name": "spacer",
+        "group": "94be1d80c6a731da",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2d5a234c4d671258",
+        "type": "ui_spacer",
+        "z": "987ee1b44fee7f84",
+        "name": "spacer",
+        "group": "94be1d80c6a731da",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "408da7aab29c151a",
+        "type": "ui_spacer",
+        "z": "987ee1b44fee7f84",
+        "name": "spacer",
+        "group": "94be1d80c6a731da",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "670a6a06bd99c6ec",
+        "type": "ui_spacer",
+        "z": "987ee1b44fee7f84",
+        "name": "spacer",
+        "group": "94be1d80c6a731da",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "540ac9e01c2e2b81",
+        "type": "ui_spacer",
+        "z": "987ee1b44fee7f84",
+        "name": "spacer",
+        "group": "94be1d80c6a731da",
+        "order": 14,
+        "width": 25,
+        "height": 1
+    },
+    {
+        "id": "088b7d429fc51c98",
+        "type": "ui_tab",
+        "name": "수면모드",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ui_tab_sleep_mode",
+        "type": "ui_tab",
+        "name": "수면모드",
+        "icon": "fa-bed",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ui_group_sleep_main",
+        "type": "ui_group",
+        "name": "Sleep",
+        "tab": "ui_tab_sleep_mode",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "06b4bc02fed47c2b",
+        "type": "mqtt in",
+        "z": "987ee1b44fee7f84",
+        "name": "Sensors in",
+        "topic": "home/sensors",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker_local",
+        "nl": false,
+        "rap": false,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "9fc81b2fbf828152"
+            ]
+        ]
+    },
+    {
+        "id": "9fc81b2fbf828152",
+        "type": "json",
+        "z": "987ee1b44fee7f84",
+        "name": "JSON 파싱",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 330,
+        "y": 80,
+        "wires": [
+            [
+                "82068a2693b9b360",
+                "04106941079067ea",
+                "91818cc80162133a",
+                "c811b2b3b222fe86",
+                "d6a45b18f92b21df",
+                "cbebca7fcdba1209",
+                "a1b2c3d4e5f60020"
+            ]
+        ]
+    },
+    {
+        "id": "82068a2693b9b360",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "온도 추출",
+        "func": "if (msg.payload && msg.payload.temp !== undefined) {\n    msg.payload = msg.payload.temp;\n    return msg;\n}\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 40,
+        "wires": [
+            [
+                "0d1c40569d699482"
+            ]
+        ]
+    },
+    {
+        "id": "04106941079067ea",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "습도 추출",
+        "func": "if (msg.payload && msg.payload.hum !== undefined) {\n    msg.payload = msg.payload.hum;\n    return msg;\n}\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 80,
+        "wires": [
+            [
+                "aa7f9f1931859c82"
+            ]
+        ]
+    },
+    {
+        "id": "91818cc80162133a",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "조도 추출",
+        "func": "if (msg.payload && msg.payload.light !== undefined) {\n    msg.payload = msg.payload.light;\n    return msg;\n}\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 120,
+        "wires": [
+            [
+                "70f496f9e2ebb192"
+            ]
+        ]
+    },
+    {
+        "id": "c811b2b3b222fe86",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "가스 추출",
+        "func": "if (msg.payload && msg.payload.gas !== undefined) {\n    msg.payload = msg.payload.gas;\n    return msg;\n}\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 160,
+        "wires": [
+            [
+                "4340ea488a7a5c71"
+            ]
+        ]
+    },
+    {
+        "id": "d6a45b18f92b21df",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "모드 추출",
+        "func": "if (msg.payload && msg.payload.mode !== undefined) {\n    msg.payload = msg.payload.mode;\n    return msg;\n}\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 200,
+        "wires": [
+            [
+                "3b083d147e191dab"
+            ]
+        ]
+    },
+    {
+        "id": "cbebca7fcdba1209",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "큰 소리 플래그",
+        "func": "if (msg.payload && msg.payload.loud !== undefined) {\n    var loud = msg.payload.loud;\n    if (loud === 1 || loud === \"1\") {\n        msg.payload = \"큰 소리 감지\";\n    } else {\n        msg.payload = \"정상\";\n    }\n    return msg;\n}\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [
+                "8430c99da2c517f5"
+            ]
+        ]
+    },
+    {
+        "id": "0d1c40569d699482",
+        "type": "ui_gauge",
+        "z": "987ee1b44fee7f84",
+        "name": "온도",
+        "group": "ui_group_main",
+        "order": 3,
+        "width": 6,
+        "height": 6,
+        "gtype": "donut",
+        "title": "온도 (℃)",
+        "label": "℃",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 50,
+        "colors": [
+            "#4ade80",
+            "#facc15",
+            "#f87171"
+        ],
+        "seg1": "28",
+        "seg2": "32",
+        "diff": false,
+        "className": "home-gauge gauge-temp",
+        "x": 770,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "aa7f9f1931859c82",
+        "type": "ui_gauge",
+        "z": "987ee1b44fee7f84",
+        "name": "습도",
+        "group": "ui_group_main",
+        "order": 4,
+        "width": 6,
+        "height": 6,
+        "gtype": "donut",
+        "title": "습도 (%)",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 100,
+        "colors": [
+            "#4ade80",
+            "#facc15",
+            "#f87171"
+        ],
+        "seg1": "50",
+        "seg2": "75",
+        "diff": false,
+        "className": "home-gauge gauge-hum",
+        "x": 770,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "70f496f9e2ebb192",
+        "type": "ui_gauge",
+        "z": "987ee1b44fee7f84",
+        "name": "조도",
+        "group": "ui_group_main",
+        "order": 6,
+        "width": 6,
+        "height": 6,
+        "gtype": "donut",
+        "title": "조도",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 4095,
+        "colors": [
+            "#4ade80",
+            "#facc15",
+            "#f87171"
+        ],
+        "seg1": 1000,
+        "seg2": 3000,
+        "diff": false,
+        "className": "home-gauge gauge-light",
+        "x": 770,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "4340ea488a7a5c71",
+        "type": "ui_gauge",
+        "z": "987ee1b44fee7f84",
+        "name": "가스",
+        "group": "ui_group_main",
+        "order": 7,
+        "width": 6,
+        "height": 6,
+        "gtype": "donut",
+        "title": "가스 센서",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 4095,
+        "colors": [
+            "#4ade80",
+            "#facc15",
+            "#f87171"
+        ],
+        "seg1": 1000,
+        "seg2": 3000,
+        "diff": false,
+        "className": "home-gauge gauge-gas",
+        "x": 770,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "3b083d147e191dab",
+        "type": "ui_text",
+        "z": "987ee1b44fee7f84",
+        "group": "ui_group_main",
+        "order": 1,
+        "width": 25,
+        "height": 1,
+        "name": "현재 모드",
+        "label": "현재 모드",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 790,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "8430c99da2c517f5",
+        "type": "ui_text",
+        "z": "987ee1b44fee7f84",
+        "group": "ui_group_main",
+        "order": 13,
+        "width": 12,
+        "height": 1,
+        "name": "소리 상태",
+        "label": "소리 상태",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 800,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "7862d2d691fdb1a7",
+        "type": "mqtt in",
+        "z": "987ee1b44fee7f84",
+        "name": "Alert in",
+        "topic": "home/alert",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker_local",
+        "nl": false,
+        "rap": false,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "9b53effee788f966"
+            ]
+        ]
+    },
+    {
+        "id": "9b53effee788f966",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "경보 메시지",
+        "func": "// 들어오는 값: \"LOUD\", \"INTRUSION\", 그 외 등\nconst raw = String(msg.payload || \"\").trim();\n\n// 1) 기본 UI용 텍스트 만들기\nlet uiText = \"정상\";\nif (raw === \"LOUD\") {\n    uiText = \"🔊 큰 소리 감지!\";\n} else if (raw === \"INTRUSION\") {\n    uiText = \"🚨 침입(인체 감지) 경보!\";\n}\n\n// 경보 상태 텍스트용 메시지\nconst msgUi = { payload: uiText };\n\n// 2) 현재 모드 / 외출 경과 시간 확인\nconst mode = flow.get(\"currentMode\") || \"HOME\";\nconst awaySince = flow.get(\"awaySince\");\n\n// HOME이면 그냥 UI만 업데이트하고 끝\nif (mode !== \"AWAY\" || !awaySince) {\n    return [msgUi, null];\n}\n\n// 외출 후 경과 시간(ms)\nconst elapsed = Date.now() - awaySince;\n\n// 외출한 지 1분 안 됐으면 아직 보안 모드 완전히 ON 아님\nif (elapsed < 60 * 1000) {\n    return [msgUi, null];\n}\n\n// LOUD/INTRUSION 아니면 침입 취급 안 함\nif (raw !== \"LOUD\" && raw !== \"INTRUSION\") {\n    return [msgUi, null];\n}\n\n// 3) 침입 상태 플래그로 텔레그램 스팸 방지\nlet already = flow.get(\"intrusionActive\") || false;\n\nlet msgTelegram = null;\nif (!already) {\n    flow.set(\"intrusionActive\", true);\n\n    const now = new Date();\n    const t = now.toLocaleString();  // “2025. 12. 05. 오후 7:03” 이런 느낌\n\n    const text =\n        \"[침입 감지]\\n\" +\n        \"모드: AWAY\\n\" +\n        \"유형: \" + raw + \"\\n\" +\n        \"시간: \" + t + \"\\n\";\n\n    // HTTP Request 노드용 메시지\n    msgTelegram = {\n        headers: { \"Content-Type\": \"application/json\" },\n        payload: {\n            chat_id: "<TELEGRAM_CHAT_ID>",   // 네 채팅 ID\n            text: text\n        }\n    };\n}\n\n// 1번 출력: 대시보드 (경보 상태 + 카드)\n// 2번 출력: 텔레그램 HTTP 요청\nreturn [msgUi, msgTelegram];\n",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 320,
+        "wires": [
+            [
+                "5333a4c63939edec",
+                "11413562b43f1385"
+            ],
+            [
+                "03b13dc24260742e"
+            ]
+        ]
+    },
+    {
+        "id": "a1b2c3d4e5f6a001",
+        "type": "inject",
+        "z": "987ee1b44fee7f84",
+        "name": "외부 날씨 10분마다",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "*/10 * * * *",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 620,
+        "wires": [
+            [
+                "b1c2d3e4f5a60002"
+            ]
+        ]
+    },
+    {
+        "id": "b1c2d3e4f5a60002",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "KMA 초단기실황 파라미터",
+        "func": "const AUTH_KEY = '<KMA_API_KEY>';\n\nconst now = new Date();\nnow.setMinutes(now.getMinutes() - 40);\n\nfunction pad(n) {\n    return n < 10 ? '0' + n : '' + n;\n}\n\nconst y = now.getFullYear();\nconst m = pad(now.getMonth() + 1);\nconst d = pad(now.getDate());\nconst h = pad(now.getHours());\n\nconst base_date = '' + y + m + d;\nconst base_time = h + '00';\n\n// 여기 추가\nmsg.base_date = base_date;\nmsg.base_time = base_time;\n\nconst params = {\n    authKey: AUTH_KEY,\n    numOfRows: '1000',\n    pageNo: '1',\n    base_date: base_date,\n    base_time: base_time,\n    nx: '61',\n    ny: '120'\n};\n\nconst esc = encodeURIComponent;\nconst qs = Object.keys(params)\n    .map(k => k + '=' + esc(params[k]))\n    .join('&');\n\nmsg.url = 'https://apihub.kma.go.kr/api/typ02/openApi/VilageFcstInfoService_2.0/getUltraSrtNcst?' + qs;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 600,
+        "wires": [
+            [
+                "c1d2e3f4a5b60003"
+            ]
+        ]
+    },
+    {
+        "id": "c1d2e3f4a5b60003",
+        "type": "http request",
+        "z": "987ee1b44fee7f84",
+        "name": "KMA 초단기실황 호출",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 670,
+        "y": 600,
+        "wires": [
+            [
+                "d1e2f3a4b5c60004"
+            ]
+        ]
+    },
+    {
+        "id": "d1e2f3a4b5c60004",
+        "type": "xml",
+        "z": "987ee1b44fee7f84",
+        "name": "XML 파싱",
+        "property": "payload",
+        "attr": "$",
+        "chr": "",
+        "x": 870,
+        "y": 600,
+        "wires": [
+            [
+                "e1f2a3b4c5d60005",
+                "func_away_prep_calc"
+            ]
+        ]
+    },
+    {
+        "id": "e1f2a3b4c5d60005",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "실황 데이터 파싱",
+        "func": "function first(v) {\n    return Array.isArray(v) ? v[0] : v;\n}\n\nconst root = msg.payload || {};\n\nconst response = first(root.response);\nif (!response) {\n    node.warn(\"response 없음\");\n    return [null, null, null, null, null];\n}\n\nconst body = first(response.body);\nif (!body) {\n    node.warn(\"body 없음\");\n    return [null, null, null, null, null];\n}\n\nconst itemsWrap = first(body.items);\nif (!itemsWrap || !itemsWrap.item) {\n    node.warn(\"items/item 없음\");\n    return [null, null, null, null, null];\n}\n\nconst items = itemsWrap.item;\nconst data = {};\n\nfor (let i = 0; i < items.length; i++) {\n    const it = items[i];\n\n    const cat = first(it.category);\n    const val = first(it.obsrValue);\n\n    if (cat != null) {\n        data[cat] = val;\n    }\n}\n\nnode.status({ text: JSON.stringify(data) });\n\n// 공통 데이터는 msg.weather에 넣고,\n// 아래에서 출력 5개로 복사해서 뿌려줌\nmsg.weather = data;\n\n// 각 출력으로 나갈 메시지 5개 만들기\nconst base = { ...msg };              // 얕은 복사\nbase.weather = data;                  // 확실하게 붙여줌\n\nconst out1 = { ...base }; // 기온\nconst out2 = { ...base }; // 습도\nconst out3 = { ...base }; // 강수량\nconst out4 = { ...base }; // 강수 형태\nconst out5 = { ...base }; // 바람\n\nreturn [out1, out2, out3, out4, out5];\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 600,
+        "wires": [
+            [
+                "362fbf5f3fae9a63"
+            ]
+        ]
+    },
+    {
+        "id": "362fbf5f3fae9a63",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "외부 카드 데이터",
+        "func": "// msg.weather 에 실황 데이터가 들어온다고 가정\nconst w = msg.weather || {};\n\nfunction num(v) {\n    const f = parseFloat(v);\n    return isNaN(f) ? null : f;\n}\n\nconst temp = num(w.T1H);   // 기온\nconst hum = num(w.REH);   // 습도\nconst rn = num(w.RN1);   // 1시간 강수량\nconst pty = (w.PTY !== undefined ? Number(w.PTY) : null);\nconst wsd = num(w.WSD);   // 풍속\nconst vec = num(w.VEC);   // 풍향 (deg)\n\n// 아이콘 + 색상도 같이 넣어서 카드별로 스타일 먹이게 할 것\n// 1) 기온 카드 -------------------------------------------------\nconst cardTemp = {\n    label: \"외부 기온\",\n    value: temp !== null ? temp.toFixed(1) : \"–\",\n    unit: \"℃\",\n    desc: \"\",\n    icon: \"🌡️\",\n    color: \"#ff6b6b\"\n};\n\n// 2) 습도 카드 -------------------------------------------------\nconst cardHum = {\n    label: \"외부 습도\",\n    value: hum !== null ? hum.toFixed(0) : \"–\",\n    unit: \"%\",\n    desc: \"\",\n    icon: \"💧\",\n    color: \"#4dabf7\"\n};\n\n// 3) 강수량 카드 -----------------------------------------------\nlet rainText = \"강수 없음\";\nlet rainVal = \"0.0\";\nif (rn !== null) {\n    rainVal = rn.toFixed(1);\n    if (rn > 0) rainText = rn.toFixed(1) + \" mm\";\n}\n\nconst cardRn = {\n    label: \"1시간 강수량\",\n    value: rainVal,\n    unit: \"mm\",\n    desc: rainText,\n    icon: \"☔\",\n    color: \"#74c0fc\"\n};\n\n// 4) 강수 형태 카드 --------------------------------------------\nlet ptyText = \"강수 없음\";\nif (pty !== null) {\n    switch (pty) {\n        case 0: ptyText = \"강수 없음\"; break;\n        case 1: ptyText = \"비\"; break;\n        case 2: ptyText = \"비/눈\"; break;\n        case 3: ptyText = \"눈\"; break;\n        case 5: ptyText = \"빗방울\"; break;\n        case 6: ptyText = \"빗방울/눈날림\"; break;\n        case 7: ptyText = \"눈날림\"; break;\n    }\n}\n\nconst cardPty = {\n    label: \"강수 형태\",\n    value: ptyText,\n    unit: \"\",\n    desc: \"\",\n    icon: \"🌧️\",\n    color: \"#9775fa\"\n};\n\n// 5) 바람 카드 -------------------------------------------------\nlet dirsKor = [\n    \"북\", \"북북동\", \"북동\", \"동북동\",\n    \"동\", \"동남동\", \"남동\", \"남남동\",\n    \"남\", \"남남서\", \"남서\", \"서남서\",\n    \"서\", \"서북서\", \"북서\", \"북북서\", \"북\"\n];\n\nlet dirLabel = \"방향 정보 없음\";\nif (vec !== null) {\n    let idx = Math.floor((vec + 11.25) / 22.5);\n    if (idx < 0) idx = 0;\n    if (idx > 16) idx = 16;\n    dirLabel = dirsKor[idx] + \"풍\";\n}\n\nlet windMain = \"정보 없음\";\nif (wsd !== null) {\n    windMain = wsd.toFixed(1) + \" m/s\";\n}\n\nconst cardWind = {\n    label: \"바람\",\n    value: windMain,\n    unit: \"\",\n    desc: dirLabel,\n    icon: \"🌬️\",\n    color: \"#adb5bd\"\n};\n\n// ★★ 출력 5개: 각 카드 하나씩 반환 ★★\nreturn [\n    { payload: cardTemp },  // 1: 기온\n    { payload: cardHum },   // 2: 습도\n    { payload: cardRn },    // 3: 강수량\n    { payload: cardPty },   // 4: 강수 형태\n    { payload: cardWind }   // 5: 바람\n];\n",
+        "outputs": 5,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 400,
+        "wires": [
+            [
+                "2e2954e96dbb34fd",
+                "f581c459ac27f594"
+            ],
+            [
+                "44ebbb3c535a12b3",
+                "c146f6e887417227"
+            ],
+            [
+                "9e79f239097598b1",
+                "fa2435a1cf3e816d"
+            ],
+            [
+                "69f3e6204f84061c",
+                "c588f3ac444be886"
+            ],
+            [
+                "8a479f7cd052822f",
+                "74ae387ec1edcb13"
+            ]
+        ]
+    },
+    {
+        "id": "2e2954e96dbb34fd",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "ui_group_main",
+        "name": "",
+        "order": 16,
+        "width": 5,
+        "height": 2,
+        "format": "<div style=\"\n  padding:10px 14px;\n  border-radius:12px;\n  background:#0b1a2b;\n  color:#f1f3f5;\n  box-shadow:0 2px 6px rgba(0,0,0,0.35);\n  display:flex;\n  align-items:center;\n  gap:12px;\n\">\n  <div style=\"\n    width:36px; height:36px;\n    border-radius:50%;\n    border:2px solid {{msg.payload.color}};\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    font-size:20px;\n  \">\n    {{msg.payload.icon}}\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; gap:3px;\">\n    <div style=\"font-size:12px; opacity:0.7;\">\n      {{msg.payload.label}}\n    </div>\n\n    <div style=\"font-size:22px; font-weight:600; line-height:1.1;\">\n      {{msg.payload.value}}\n      <span style=\"font-size:12px; opacity:0.8; margin-left:2px;\">\n        {{msg.payload.unit}}\n      </span>\n    </div>\n\n    <div style=\"font-size:11px; opacity:0.7; min-height:14px;\">\n      {{msg.payload.desc}}\n    </div>\n  </div>\n\n  <div style=\"\n    width:4px;\n    align-self:stretch;\n    border-radius:999px;\n    background:{{msg.payload.color}};\n  \"></div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1000,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "44ebbb3c535a12b3",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "ui_group_main",
+        "name": "",
+        "order": 17,
+        "width": 5,
+        "height": 2,
+        "format": "<div style=\"\n  padding:10px 14px;\n  border-radius:12px;\n  background:#0b1a2b;\n  color:#f1f3f5;\n  box-shadow:0 2px 6px rgba(0,0,0,0.35);\n  display:flex;\n  align-items:center;\n  gap:12px;\n\">\n  <div style=\"\n    width:36px; height:36px;\n    border-radius:50%;\n    border:2px solid {{msg.payload.color}};\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    font-size:20px;\n  \">\n    {{msg.payload.icon}}\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; gap:3px;\">\n    <div style=\"font-size:12px; opacity:0.7;\">\n      {{msg.payload.label}}\n    </div>\n\n    <div style=\"font-size:22px; font-weight:600; line-height:1.1;\">\n      {{msg.payload.value}}\n      <span style=\"font-size:12px; opacity:0.8; margin-left:2px;\">\n        {{msg.payload.unit}}\n      </span>\n    </div>\n\n    <div style=\"font-size:11px; opacity:0.7; min-height:14px;\">\n      {{msg.payload.desc}}\n    </div>\n  </div>\n\n  <div style=\"\n    width:4px;\n    align-self:stretch;\n    border-radius:999px;\n    background:{{msg.payload.color}};\n  \"></div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1000,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9e79f239097598b1",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "ui_group_main",
+        "name": "",
+        "order": 18,
+        "width": 5,
+        "height": 2,
+        "format": "<div style=\"\n  padding:10px 14px;\n  border-radius:12px;\n  background:#0b1a2b;\n  color:#f1f3f5;\n  box-shadow:0 2px 6px rgba(0,0,0,0.35);\n  display:flex;\n  align-items:center;\n  gap:12px;\n\">\n  <div style=\"\n    width:36px; height:36px;\n    border-radius:50%;\n    border:2px solid {{msg.payload.color}};\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    font-size:20px;\n  \">\n    {{msg.payload.icon}}\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; gap:3px;\">\n    <div style=\"font-size:12px; opacity:0.7;\">\n      {{msg.payload.label}}\n    </div>\n\n    <div style=\"font-size:22px; font-weight:600; line-height:1.1;\">\n      {{msg.payload.value}}\n      <span style=\"font-size:12px; opacity:0.8; margin-left:2px;\">\n        {{msg.payload.unit}}\n      </span>\n    </div>\n\n    <div style=\"font-size:11px; opacity:0.7; min-height:14px;\">\n      {{msg.payload.desc}}\n    </div>\n  </div>\n\n  <div style=\"\n    width:4px;\n    align-self:stretch;\n    border-radius:999px;\n    background:{{msg.payload.color}};\n  \"></div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1000,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "69f3e6204f84061c",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "ui_group_main",
+        "name": "",
+        "order": 19,
+        "width": 5,
+        "height": 2,
+        "format": "<div style=\"\n  padding:10px 14px;\n  border-radius:12px;\n  background:#0b1a2b;\n  color:#f1f3f5;\n  box-shadow:0 2px 6px rgba(0,0,0,0.35);\n  display:flex;\n  align-items:center;\n  gap:12px;\n\">\n  <div style=\"\n    width:36px; height:36px;\n    border-radius:50%;\n    border:2px solid {{msg.payload.color}};\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    font-size:20px;\n  \">\n    {{msg.payload.icon}}\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; gap:3px;\">\n    <div style=\"font-size:12px; opacity:0.7;\">\n      {{msg.payload.label}}\n    </div>\n\n    <div style=\"font-size:22px; font-weight:600; line-height:1.1;\">\n      {{msg.payload.value}}\n      <span style=\"font-size:12px; opacity:0.8; margin-left:2px;\">\n        {{msg.payload.unit}}\n      </span>\n    </div>\n\n    <div style=\"font-size:11px; opacity:0.7; min-height:14px;\">\n      {{msg.payload.desc}}\n    </div>\n  </div>\n\n  <div style=\"\n    width:4px;\n    align-self:stretch;\n    border-radius:999px;\n    background:{{msg.payload.color}};\n  \"></div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1000,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8a479f7cd052822f",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "ui_group_main",
+        "name": "",
+        "order": 20,
+        "width": 5,
+        "height": 2,
+        "format": "<div style=\"\n  padding:10px 14px;\n  border-radius:12px;\n  background:#0b1a2b;\n  color:#f1f3f5;\n  box-shadow:0 2px 6px rgba(0,0,0,0.35);\n  display:flex;\n  align-items:center;\n  gap:12px;\n\">\n  <div style=\"\n    width:36px; height:36px;\n    border-radius:50%;\n    border:2px solid {{msg.payload.color}};\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    font-size:20px;\n  \">\n    {{msg.payload.icon}}\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; gap:3px;\">\n    <div style=\"font-size:12px; opacity:0.7;\">\n      {{msg.payload.label}}\n    </div>\n\n    <div style=\"font-size:22px; font-weight:600; line-height:1.1;\">\n      {{msg.payload.value}}\n      <span style=\"font-size:12px; opacity:0.8; margin-left:2px;\">\n        {{msg.payload.unit}}\n      </span>\n    </div>\n\n    <div style=\"font-size:11px; opacity:0.7; min-height:14px;\">\n      {{msg.payload.desc}}\n    </div>\n  </div>\n\n  <div style=\"\n    width:4px;\n    align-self:stretch;\n    border-radius:999px;\n    background:{{msg.payload.color}};\n  \"></div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1020,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "home_gauge_css",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "ui_group_main",
+        "name": "Home gauge CSS",
+        "order": 23,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n  @import url(\"https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css\");\n\n  body.nr-dashboard-theme {\n    background-color: #050d19 !important;\n    font-family: \"Pretendard\", sans-serif !important;\n  }\n\n  .md-card {\n    background-color: #0a1624 !important;\n    border-radius: 20px !important;\n    border: 1px solid rgba(255, 255, 255, 0.05) !important;\n    box-shadow: none !important;\n    padding: 16px 18px !important;\n  }\n\n  .nr-dashboard-gauge .label-min,\n  .nr-dashboard-gauge .label-max,\n  .nr-dashboard-gauge text.min,\n  .nr-dashboard-gauge text.max {\n    display: none !important;\n    opacity: 0 !important;\n    visibility: hidden !important;\n  }\n\n  .nr-dashboard-gauge text {\n    fill: #e2e8f0 !important;\n    font-weight: 600 !important;\n    font-size: 26px !important;\n    transform: translateY(-5px);\n  }\n\n  .nr-dashboard-cardtitle {\n    color: #94a3b8 !important;\n    font-size: 14px !important;\n    font-weight: 500 !important;\n    text-align: center !important;\n    margin-bottom: 8px !important;\n  }\n\n  .nr-dashboard-gauge .label-small {\n    display: none !important;\n  }\n\n  .nr-dashboard-gauge path.back-theme {\n    opacity: 0.15 !important;\n    stroke-width: 10px !important;\n  }\n\n  .nr-dashboard-gauge path.fg-arc {\n    stroke-width: 10px !important;\n    stroke-linecap: round !important;\n  }\n\n  .away-card {\n    display: flex;\n    align-items: center;\n    gap: 16px;\n    padding: 0;\n    border-radius: inherit;\n    background: transparent !important;\n    box-shadow: none !important;\n    color: #e5e7eb;\n    width: 100%;\n    box-sizing: border-box;\n  }\n\n  .away-card-icon {\n    font-size: 32px;\n    min-width: 52px;\n    min-height: 52px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border-radius: 16px;\n    background: rgba(15, 23, 42, 0.9);\n  }\n\n  .away-card-body {\n    display: flex;\n    flex-direction: column;\n    gap: 4px;\n  }\n\n  .away-card-title {\n    font-size: 13px;\n    color: #9ca3af;\n  }\n\n  .away-card-main {\n    font-size: 18px;\n    font-weight: 700;\n  }\n\n  .away-card-sub {\n    font-size: 13px;\n    color: #d1d5db;\n  }\n\n  .away-card-meta {\n    font-size: 11px;\n    color: #6b7280;\n    margin-top: 4px;\n  }\n\n  .md-card.away-card {\n    background: transparent !important;\n    border: none !important;\n    padding: 0 !important;\n    box-shadow: none !important;\n  }\n\n  div.away-card.outfit-card {\n    position: relative;\n    display: flex;\n    align-items: center;\n    gap: 16px;\n    padding: 18px 22px;\n    padding-right: 42px;\n    border-radius: 20px;\n    background: radial-gradient(circle at 0% 0%, rgba(248, 113, 22, 0.18), rgba(15, 23, 42, 1));\n    border: 1px solid rgba(248, 113, 22, 0.5);\n    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7), 0 0 18px rgba(248, 113, 22, 0.35);\n    color: #e5e7eb;\n    min-height: 140px;\n  }\n\n  div.away-card.outfit-card::after {\n    content: \"\";\n    position: absolute;\n    right: 16px;\n    top: 14px;\n    bottom: 14px;\n    width: 4px;\n    border-radius: 999px;\n    background: linear-gradient(to bottom, #fed7aa, #fb923c, #f97316);\n    box-shadow: 0 0 12px rgba(248, 153, 72, 0.8);\n  }\n\n  div.away-card.outfit-card .away-card-icon {\n    background: radial-gradient(circle at 30% 20%, #60a5fa, #1d4ed8 60%, #020617 100%);\n    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);\n  }\n\n  div.away-card.outfit-card .away-card-title {\n    font-size: 16px !important;\n  }\n\n  div.away-card.outfit-card .away-card-main {\n    font-size: 28px !important;\n    font-weight: 800;\n    color: #f97316;\n  }\n\n  div.away-card.outfit-card .away-card-sub {\n    font-size: 16px !important;\n    color: #e5e7eb;\n  }\n\n  div.away-card.outfit-card .away-card-meta {\n    font-size: 13px !important;\n  }\n\n  div.away-card.umbrella-card {\n    position: relative;\n    display: flex;\n    align-items: center;\n    gap: 16px;\n    padding: 18px 22px;\n    padding-right: 42px;\n    border-radius: 20px;\n    background: radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.2), rgba(15, 23, 42, 1));\n    border: 1px solid rgba(56, 189, 248, 0.6);\n    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7), 0 0 18px rgba(59, 130, 246, 0.35);\n    color: #e5e7eb;\n    min-height: 140px;\n  }\n\n  div.away-card.umbrella-card::after {\n    content: \"\";\n    position: absolute;\n    right: 16px;\n    top: 14px;\n    bottom: 14px;\n    width: 4px;\n    border-radius: 999px;\n    background: linear-gradient(to bottom, #e0f2fe, #38bdf8, #0ea5e9);\n    box-shadow: 0 0 12px rgba(56, 189, 248, 0.8);\n  }\n\n  div.away-card.umbrella-card .away-card-icon {\n    background: radial-gradient(circle at 30% 20%, #e0f2fe, #38bdf8 60%, #020617 100%);\n    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);\n  }\n\n  div.away-card.umbrella-card .away-card-title {\n    font-size: 16px !important;\n  }\n\n  div.away-card.umbrella-card .away-card-main {\n    font-size: 26px !important;\n    font-weight: 800;\n  }\n\n  div.away-card.umbrella-card .away-card-sub {\n    font-size: 16px !important;\n  }\n\n  div.away-card.umbrella-card .away-card-meta {\n    font-size: 13px !important;\n  }\n\n  .away-events-card {\n    margin-top: 8px;\n    background: #020617;\n    padding: 16px 18px;\n    border-radius: 18px;\n    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);\n    color: #e5e7eb;\n  }\n\n  .away-events-card .header {\n    display: flex;\n    justify-content: space-between;\n    align-items: baseline;\n    margin-bottom: 10px;\n  }\n\n  .away-events-card .title {\n    font-size: 16px;\n    font-weight: 700;\n  }\n\n  .away-events-card .subtitle {\n    font-size: 12px;\n    color: #64748b;\n  }\n\n  .away-events-card .list {\n    position: relative;\n    padding-left: 20px;\n    border-left: 2px solid #1f2937;\n    margin-left: 4px;\n  }\n\n  .away-events-card .row {\n    position: relative;\n    padding-left: 10px;\n    display: flex;\n    align-items: center;\n    gap: 8px;\n  }\n\n  .away-events-card .row::before {\n    content: \"\";\n    position: absolute;\n    left: -11px;\n    top: 50%;\n    transform: translateY(-50%);\n    width: 9px;\n    height: 9px;\n    border-radius: 999px;\n    background: #38bdf8;\n    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);\n  }\n\n  .away-events-card .row.intrusion::before {\n    background: #ef4444;\n    box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.25);\n  }\n\n  .away-events-card .row.sound::before {\n    background: #22c55e;\n    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);\n  }\n\n  .away-events-card .time {\n    width: 54px;\n    font-size: 12px;\n    color: #9ca3af;\n  }\n\n  .away-events-card .badge {\n    font-size: 12px;\n    padding: 4px 10px;\n    border-radius: 999px;\n    background: #020617;\n    color: #e5e7eb;\n    border: 1px solid #1f2937;\n    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);\n  }\n\n  .away-events-card .badge.intrusion {\n    background: #b91c1c;\n    border-color: #f97373;\n    color: #fee2e2;\n  }\n\n  .away-events-card .badge.sound {\n    background: #1d4ed8;\n    border-color: #60a5fa;\n    color: #dbeafe;\n  }\n\n  .away-events-card .empty {\n    font-size: 13px;\n    color: #6b7280;\n    margin-top: 6px;\n  }\n</style>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "global",
+        "className": "",
+        "x": 1050,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1b2c3d4e5f60020",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "실내 로그 & 이벤트",
+        "func": "// JSON 파싱된 센서 값에서 기록 + 이벤트 카운트\n// msg.payload: {temp, hum, light, gas, pir, loud, mode}\n\nlet p = msg.payload;\nif (!p) return null;\n\nlet now = new Date();\nlet ts = now.getTime();\n\n// ---- 1) 24시간 히스토리 (그래프용) ----\nlet history = flow.get('indoorHistory') || [];\n\nhistory.push({\n    t: ts,\n    temp: Number(p.temp),\n    hum: Number(p.hum)\n});\n\n// 24시간 이전 데이터는 버리기\nlet cutoff = ts - 24 * 60 * 60 * 1000;\nhistory = history.filter(e => e.t >= cutoff);\nflow.set('indoorHistory', history);\n\n// ---- 2) 하루 이벤트 카운트 (캘린더용) ----\nlet dateKey = now.toISOString().slice(0, 10); // YYYY-MM-DD\nlet calendar = flow.get('indoorCalendar') || {};\nlet day = calendar[dateKey] || { discomfort: 0, gas: 0 };\n\nlet temp = Number(p.temp);\nlet hum = Number(p.hum);\nlet gas = Number(p.gas);\n\n// 매우 단순한 쾌적 범위: 20~27도, 30~70% 밖이면 이벤트 1회\nlet discomfortEvent = false;\nif (!isNaN(temp) && !isNaN(hum)) {\n    if (temp < 20 || temp > 28 || hum < 30 || hum > 70) {\n        discomfortEvent = true;\n    }\n}\nif (discomfortEvent) {\n    day.discomfort++;\n}\n\n// 가스 이벤트 (임계값은 센서 스케일 보고 조정)\nif (!isNaN(gas) && gas > 1200) {\n    day.gas++;\n}\n\ncalendar[dateKey] = day;\nflow.set('indoorCalendar', calendar);\n\n// 그래프 업데이트용 트리거 메시지\nreturn { topic: \"update\", payload: null };",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 740,
+        "wires": [
+            [
+                "a1b2c3d4e5f60021"
+            ]
+        ]
+    },
+    {
+        "id": "a1b2c3d4e5f60021",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "차트 데이터 구성",
+        "func": "// indoorHistory에서 기간별 데이터 뽑아서 Chart.js용 구조로 변환\n\nlet history = flow.get('indoorHistory') || [];\nlet range = flow.get('chartRange') || '6h';\n\nif (msg && msg.topic === 'range') {\n    if (typeof msg.payload === 'string') {\n        range = msg.payload;\n        flow.set('chartRange', range);\n    }\n} else if (!msg || msg.topic === 'update') {\n    range = flow.get('chartRange') || '6h';\n}\n\nlet now = Date.now();\nlet windowMs = 6 * 60 * 60 * 1000;\nif (range === '1h') windowMs = 1 * 60 * 60 * 1000;\nelse if (range === '24h') windowMs = 24 * 60 * 60 * 1000;\n\nlet from = now - windowMs;\n\nlet labels = [];\nlet tempArr = [];\nlet humArr = [];\nlet comfortArr = [];\n\nfunction comfortIndex(t, h) {\n    if (isNaN(t) || isNaN(h)) return null;\n    // 간단한 불쾌지수 근사식\n    return 0.81 * t + 0.01 * h * (0.99 * t - 14.3) + 46.3;\n}\n\nhistory\n    .filter(e => e.t >= from)\n    .forEach(e => {\n        let d = new Date(e.t);\n        let label = d.toTimeString().slice(0, 5); // HH:MM\n        labels.push(label);\n        tempArr.push(e.temp);\n        humArr.push(e.hum);\n        comfortArr.push(comfortIndex(e.temp, e.hum));\n    });\n\nmsg.topic = 'chart-data';\nmsg.payload = {\n    range,\n    labels,\n    temp: tempArr,\n    hum: humArr,\n    comfort: comfortArr\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 780,
+        "wires": [
+            [
+                "a1b2c3d4e5f60022"
+            ]
+        ]
+    },
+    {
+        "id": "a1b2c3d4e5f60022",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "ui_group_main",
+        "name": "실내 쾌적도 차트",
+        "order": 21,
+        "width": 25,
+        "height": 6,
+        "format": "<div class=\"comfort-chart-card\">\n  <div class=\"chart-header\">\n    <div class=\"chart-left\">\n      <div class=\"chart-title\">실내 쾌적도 추이</div>\n      <div class=\"comfort-now\" ng-if=\"currentComfort\">\n        <div class=\"comfort-label-row\">\n          <span class=\"comfort-dot\" ng-style=\"{'background': currentComfort.color}\"></span>\n          <span class=\"comfort-label\">{{currentComfort.label || '데이터 없음'}}</span>\n        </div>\n        <div class=\"comfort-value\">\n          {{currentComfort.value || '-'}}\n          <span class=\"comfort-unit\" ng-if=\"currentComfort.value\">DI</span>\n        </div>\n        <div class=\"comfort-sub\">현재 불쾌지수</div>\n      </div>\n    </div>\n\n    <div class=\"chart-range-buttons\">\n      <button ng-class=\"{'active': chartRange === '1h'}\"\n              ng-click=\"send({topic:'range', payload:'1h'})\">1시간</button>\n      <button ng-class=\"{'active': chartRange === '6h'}\"\n              ng-click=\"send({topic:'range', payload:'6h'})\">6시간</button>\n      <button ng-class=\"{'active': chartRange === '24h'}\"\n              ng-click=\"send({topic:'range', payload:'24h'})\">24시간</button>\n    </div>\n  </div>\n\n  <div class=\"chart-body\">\n    <canvas id=\"comfortChart\" height=\"140\"></canvas>\n  </div>\n</div>\n\n<script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>\n<script>\n(function(scope) {\n  let chart;\n  scope.chartRange = '6h';\n  scope.currentComfort = {\n    value: null,\n    label: '데이터 없음',\n    color: '#727c96'\n  };\n\n  function comfortLabel(v) {\n    if (v == null || isNaN(v)) {\n      return { label: '데이터 없음', color: '#727c96' };\n    }\n    if (v < 68) {\n      return { label: '쾌적', color: '#43ff9a' };\n    } else if (v < 75) {\n      return { label: '주의', color: '#f9c74f' };\n    }\n    return { label: '불쾌', color: '#ff4b5c' };\n  }\n\n  function updateCurrentComfort(payload) {\n    if (!payload || !payload.comfort || !payload.comfort.length) {\n      scope.$applyAsync(function() {\n        scope.currentComfort = {\n          value: null,\n          label: '데이터 없음',\n          color: '#727c96'\n        };\n      });\n      return;\n    }\n    const last = payload.comfort[payload.comfort.length - 1];\n    const info = comfortLabel(last);\n    scope.$applyAsync(function() {\n      scope.currentComfort = {\n        value: isNaN(last) ? null : last.toFixed(1),\n        label: info.label,\n        color: info.color\n      };\n    });\n  }\n\n  function renderChart(payload) {\n    const canvas = document.getElementById('comfortChart');\n    if (!canvas) return;\n    const ctx = canvas.getContext('2d');\n\n    updateCurrentComfort(payload);\n\n    if (chart) {\n      chart.data.labels = payload.labels;\n      chart.data.datasets[0].data = payload.temp;\n      chart.data.datasets[1].data = payload.hum;\n      chart.data.datasets[2].data = payload.comfort;\n      chart.update();\n      return;\n    }\n\n    chart = new Chart(ctx, {\n      type: 'line',\n      data: {\n        labels: payload.labels,\n        datasets: [\n          {\n            label: '온도(℃)',\n            data: payload.temp,\n            borderColor: '#ff9f43',\n            backgroundColor: 'rgba(255,159,67,0.15)',\n            tension: 0.25,\n            pointRadius: 0\n          },\n          {\n            label: '습도(%)',\n            data: payload.hum,\n            borderColor: '#54a0ff',\n            backgroundColor: 'rgba(84,160,255,0.15)',\n            tension: 0.25,\n            pointRadius: 0\n          },\n          {\n            label: '불쾌지수',\n            data: payload.comfort,\n            borderColor: '#ff6b81',\n            backgroundColor: 'rgba(255,107,129,0.12)',\n            tension: 0.25,\n            pointRadius: 0,\n            yAxisID: 'y1'\n          }\n        ]\n      },\n      options: {\n        responsive: true,\n        maintainAspectRatio: false,\n        layout: {\n          padding: { top: 8, right: 10, bottom: 14, left: 4 }\n        },\n        scales: {\n          x: {\n            grid: { color: 'rgba(255,255,255,0.05)' },\n            ticks: {\n              color: '#cfd9ff',\n              maxTicksLimit: 8,\n              padding: 4\n            }\n          },\n          y: {\n            position: 'left',\n            grid: { color: 'rgba(255,255,255,0.03)' },\n            ticks: {\n              color: '#cfd9ff',\n              padding: 4\n            }\n          },\n          y1: {\n            position: 'right',\n            grid: { display: false },\n            ticks: {\n              color: '#ffb8c6',\n              padding: 4\n            }\n          }\n        },\n        plugins: {\n          legend: {\n            labels: {\n              color: '#e0ecff',\n              usePointStyle: true,\n              boxWidth: 10\n            }\n          }\n        }\n      }\n    });\n  }\n\n  scope.$watch('msg', function(msg) {\n    if (!msg) return;\n    if (msg.topic === 'chart-data') {\n      scope.chartRange = msg.payload.range;\n      renderChart(msg.payload);\n    }\n  });\n})(scope);\n</script>\n\n<style>\n.comfort-chart-card {\n  background:#050d19;\n  border-radius:18px;\n  padding:14px 20px 16px 20px;\n  box-shadow:0 8px 22px rgba(0,0,0,0.55);\n  height:260px;\n  box-sizing:border-box;\n}\n.chart-header {\n  display:flex;\n  justify-content:space-between;\n  align-items:flex-start;\n  margin-bottom:4px;\n}\n.chart-left {\n  display:flex;\n  align-items:center;\n  gap:16px;\n}\n.chart-title {\n  color:#e5eeff;\n  font-weight:600;\n  font-size:15px;\n}\n.comfort-now {\n  display:flex;\n  flex-direction:column;\n  justify-content:center;\n}\n.comfort-label-row {\n  display:flex;\n  align-items:center;\n  gap:4px;\n}\n.comfort-dot {\n  width:8px;\n  height:8px;\n  border-radius:999px;\n}\n.comfort-label {\n  font-size:11px;\n  color:#cfd9ff;\n}\n.comfort-value {\n  font-size:20px;\n  font-weight:700;\n  color:#ffffff;\n  line-height:1.1;\n}\n.comfort-unit {\n  font-size:11px;\n  font-weight:500;\n  margin-left:4px;\n  color:#9fb3ff;\n}\n.comfort-sub {\n  font-size:10px;\n  color:#7f8fb3;\n}\n.chart-range-buttons button {\n  background:#0b1320;\n  border:1px solid #1c2940;\n  color:#9fb3ff;\n  border-radius:999px;\n  font-size:11px;\n  padding:4px 10px;\n  margin-left:4px;\n}\n.chart-range-buttons button.active {\n  background:#2962ff;\n  border-color:#2962ff;\n  color:#ffffff;\n}\n.chart-body {\n  margin-top:6px;\n  height:190px;\n}\n</style>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 900,
+        "y": 780,
+        "wires": [
+            [
+                "a1b2c3d4e5f60021"
+            ]
+        ]
+    },
+    {
+        "id": "a1b2c3d4e5f60023",
+        "type": "inject",
+        "z": "987ee1b44fee7f84",
+        "name": "차트 초기화(6h)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "3",
+        "topic": "range",
+        "payload": "6h",
+        "payloadType": "str",
+        "x": 110,
+        "y": 780,
+        "wires": [
+            [
+                "a1b2c3d4e5f60021"
+            ]
+        ]
+    },
+    {
+        "id": "a1b2c3d4e5f60030",
+        "type": "inject",
+        "z": "987ee1b44fee7f84",
+        "name": "캘린더 갱신",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 880,
+        "wires": [
+            [
+                "a1b2c3d4e5f60031"
+            ]
+        ]
+    },
+    {
+        "id": "a1b2c3d4e5f60031",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "캘린더 데이터 구성",
+        "func": "let now = new Date();\nlet year = now.getFullYear();\nlet month = now.getMonth(); // 0-based\nlet daysInMonth = new Date(year, month + 1, 0).getDate();\nlet firstDow = new Date(year, month, 1).getDay(); // 0=Sun\n\nlet calendar = flow.get('indoorCalendar') || {};\nlet days = [];\n\nfor (let d = 1; d <= daysInMonth; d++) {\n    let dateObj = new Date(year, month, d);\n    let iso = dateObj.toISOString().slice(0, 10);\n    let info = calendar[iso] || { discomfort: 0, gas: 0 };\n    let count = (info.discomfort || 0) + (info.gas || 0);\n    let level = 0;\n    if (count === 1) level = 1;\n    else if (count === 2) level = 2;\n    else if (count >= 3) level = 3;\n\n    let dow = dateObj.getDay(); // 0..6\n    let col = dow + 1;\n    let row = Math.floor((firstDow + d - 1) / 7) + 1;\n\n    days.push({\n        day: d,\n        iso: iso,\n        level: level,\n        col: col,\n        row: row,\n        discomfort: info.discomfort || 0,\n        gas: info.gas || 0\n    });\n}\n\nmsg.payload = {\n    year: year,\n    month: month + 1,\n    days: days\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 880,
+        "wires": [
+            [
+                "a1b2c3d4e5f60032"
+            ]
+        ]
+    },
+    {
+        "id": "a1b2c3d4e5f60032",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "ui_group_main",
+        "name": "실내 이벤트 캘린더",
+        "order": 22,
+        "width": 25,
+        "height": 8,
+        "format": "<div class=\"calendar-card\">\n  <div class=\"cal-header\">\n    <div class=\"cal-title\">{{msg.payload.year}}년 {{msg.payload.month}}월 실내 이벤트</div>\n    <div class=\"cal-legend\">\n      <span class=\"dot level-1\"></span> 1회\n      <span class=\"dot level-2\"></span> 2회\n      <span class=\"dot level-3\"></span> 3회 이상\n    </div>\n  </div>\n\n  <div class=\"cal-weekdays\">\n    <div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div>\n  </div>\n\n  <div class=\"cal-grid\">\n    <div ng-repeat=\"d in msg.payload.days\"\n         class=\"cal-day level-{{d.level}}\"\n         style=\"grid-column: {{d.col}}; grid-row: {{d.row}};\">\n      <div class=\"cal-day-num\">{{d.day}}</div>\n      <div class=\"cal-day-events\" ng-if=\"d.level>0\">\n        <span ng-if=\"d.discomfort>0\">불쾌 {{d.discomfort}}</span>\n        <span ng-if=\"d.gas>0\">가스 {{d.gas}}</span>\n      </div>\n    </div>\n  </div>\n</div>\n\n<style>\n.calendar-card {\n  background:#050d19;\n  border-radius:18px;\n  padding:16px 20px 20px 20px;\n  box-shadow:0 8px 22px rgba(0,0,0,0.55);\n}\n.cal-header {\n  display:flex;\n  justify-content:space-between;\n  align-items:center;\n  margin-bottom:6px;\n}\n.cal-title {\n  color:#e5eeff;\n  font-size:15px;\n  font-weight:600;\n}\n.cal-legend {\n  font-size:11px;\n  color:#9fb3ff;\n}\n.cal-legend .dot {\n  display:inline-block;\n  width:10px;\n  height:10px;\n  border-radius:999px;\n  margin:0 3px 0 10px;\n  background:#1c2940;\n}\n.cal-legend .dot.level-1 { background:#43ff9a; }\n.cal-legend .dot.level-2 { background:#f9c74f; }\n.cal-legend .dot.level-3 { background:#ff4b5c; }\n\n.cal-weekdays {\n  display:grid;\n  grid-template-columns:repeat(7,1fr);\n  font-size:11px;\n  color:#9fb3ff;\n  margin-top:4px;\n}\n.cal-weekdays div {\n  text-align:center;\n  padding-bottom:2px;\n}\n\n.cal-grid {\n  display:grid;\n  grid-template-columns:repeat(7,1fr);\n  grid-auto-rows:40px;\n  gap:4px;\n  margin-top:4px;\n}\n.cal-day {\n  position:relative;\n  border-radius:10px;\n  background:#091426;\n  box-shadow:0 1px 3px rgba(0,0,0,0.4);\n  padding:3px 4px;\n  font-size:11px;\n  color:#cbd5ff;\n}\n.cal-day.level-0 { opacity:0.6; }\n.cal-day.level-1 { box-shadow:0 0 0 1px rgba(67,255,154,0.6); }\n.cal-day.level-2 { box-shadow:0 0 0 1px rgba(249,199,79,0.7); }\n.cal-day.level-3 { box-shadow:0 0 0 1px rgba(255,75,92,0.9); background:#1b0910; }\n\n.cal-day-num { font-weight:600; }\n.cal-day-events {\n  position:absolute;\n  bottom:3px;\n  left:4px;\n  right:4px;\n  font-size:9px;\n  color:#a9b9ff;\n  display:flex;\n  justify-content:space-between;\n}\n</style>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 700,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1098dea0c1734bd",
+        "type": "ui_switch",
+        "z": "987ee1b44fee7f84",
+        "name": "모드 스위치",
+        "label": "모드 전환 (HOME/AWAY)",
+        "tooltip": "",
+        "group": "ui_group_main",
+        "order": 2,
+        "width": 25,
+        "height": 2,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "AWAY",
+        "onvalueType": "str",
+        "onicon": "fa-sign-out",
+        "oncolor": "#60a5fa",
+        "offvalue": "HOME",
+        "offvalueType": "str",
+        "officon": "fa-home",
+        "offcolor": "#f87171",
+        "animate": true,
+        "className": "",
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "5b0b1f4ab9a51c2d",
+                "c2dc435409f37222"
+            ]
+        ]
+    },
+    {
+        "id": "5b0b1f4ab9a51c2d",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "모드 상태 갱신",
+        "func": "// payload: \"HOME\" 또는 \"AWAY\" 들어옴\nlet mode = String(msg.payload || \"\").trim().toUpperCase();\n\n// 이상한 값이면 무시\nif (mode !== \"HOME\" && mode !== \"AWAY\") {\n    return null;\n}\n\n// 현재 모드 저장\nflow.set(\"currentMode\", mode);\n\nif (mode === \"AWAY\") {\n    // 외출 시작 시각 기록\n    flow.set(\"awaySince\", Date.now());\n    flow.set(\"intrusionActive\", false);   // 침입 알림 플래그 리셋\n} else {\n    // 집으로 돌아옴\n    flow.set(\"awaySince\", null);\n    flow.set(\"intrusionActive\", false);\n}\n\n// MQTT out / 모드별 탭 전환 쪽으로 그대로 전달\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 380,
+        "wires": [
+            [
+                "eff5e3853c7b2401",
+                "580ab175aea41ce7"
+            ]
+        ]
+    },
+    {
+        "id": "eff5e3853c7b2401",
+        "type": "mqtt out",
+        "z": "987ee1b44fee7f84",
+        "name": "모드 설정",
+        "topic": "home/mode",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "mqtt_broker_local",
+        "x": 510,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "c2dc435409f37222",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "모드 변경 시 경보 리셋",
+        "func": "var p = (\"\" + msg.payload).trim();\n\n// HOME 모드로 전환될 때 경보 상태를 \"정상\"으로 초기화\nif (p === \"HOME\") {\n    msg.payload = \"정상\";\n    return msg;\n}\n\n// AWAY일 때는 경보 상태를 건드리지 않음\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "5333a4c63939edec"
+            ]
+        ]
+    },
+    {
+        "id": "5333a4c63939edec",
+        "type": "ui_text",
+        "z": "987ee1b44fee7f84",
+        "group": "ui_group_main",
+        "order": 15,
+        "width": 12,
+        "height": 1,
+        "name": "경보 상태",
+        "label": "경보 상태",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#ffffff",
+        "x": 620,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "11413562b43f1385",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "94be1d80c6a731da",
+        "name": "침입 알림 카드",
+        "order": 15,
+        "width": 25,
+        "height": 2,
+        "format": "<div ng-if=\"msg.payload && msg.payload.indexOf('침입') !== -1\" style=\"background:#b91c1c;color:#fff;padding:16px;border-radius:16px;\n            font-size:20px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.3);\">\n    {{msg.payload}}\n</div>\n<div ng-if=\"!msg.payload || msg.payload.indexOf('침입') === -1\" style=\"background:#0f172a;color:#9ca3af;padding:12px 16px;border-radius:16px;\n            font-size:14px;\">\n    보안 상태: {{msg.payload || '정상'}}\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 800,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "03b13dc24260742e",
+        "type": "http request",
+        "z": "987ee1b44fee7f84",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/<TELEGRAM_BOT_TOKEN>/sendMessage",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 990,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c5f99934865e3a59",
+        "type": "ui_ui_control",
+        "z": "987ee1b44fee7f84",
+        "name": "",
+        "events": "all",
+        "x": 440,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "580ab175aea41ce7",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "모드별 탭 전환",
+        "func": "let mode = String(msg.payload || \"\").trim().toUpperCase();\n\n// HOME / AWAY 아니면 무시\nif (mode !== \"HOME\" && mode !== \"AWAY\") {\n    return null;\n}\n\n// 여기 이름은 \"탭 상단에 보이는 이름\"이랑 1글자도 똑같아야 함\nlet tabName = (mode === \"AWAY\") ? \"외출 모드\" : \"집 모니터링\";\n\nreturn {\n    payload: {\n        tab: tabName\n    }\n};\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 520,
+        "wires": [
+            [
+                "c5f99934865e3a59"
+            ]
+        ]
+    },
+    {
+        "id": "func_away_prep_calc",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "외출 준비물 추천 계산",
+        "func": "var w = msg.payload || {};\n\nvar t = parseFloat(w.T1H);\nvar reh = parseFloat(w.REH);\nvar rn1 = parseFloat(w.RN1);\nvar pty = (w.PTY !== undefined && w.PTY !== null) ? String(w.PTY) : \"0\";\n\nif (isNaN(t)) t = 0;\nif (isNaN(reh)) reh = 0;\nif (isNaN(rn1)) rn1 = 0;\n\nvar outfitIcon = \"🧥\";\nvar main = \"오늘의 옷 정보를 계산 중입니다.\";\nvar sub = \"외부 기온 데이터를 수신하면 자동으로 추천됩니다.\";\n\nif (!isNaN(t)) {\n    if (t <= 0) {\n        outfitIcon = \"🧊\";\n        main = \"한파 수준, 매우 따뜻하게 입기\";\n        sub = \"두꺼운 패딩, 목도리, 장갑, 모자까지 준비하는 것이 좋습니다.\";\n    } else if (t <= 8) {\n        outfitIcon = \"🧥\";\n        main = \"겨울 코트 / 패딩 추천\";\n        sub = \"코트 또는 패딩 + 니트, 머플러 있으면 더 따뜻합니다.\";\n    } else if (t <= 15) {\n        outfitIcon = \"🧥\";\n        main = \"간절기 아우터 필수\";\n        sub = \"얇은 코트, 가디건, 후드 집업 정도가 적당합니다.\";\n    } else if (t <= 22) {\n        outfitIcon = \"👕\";\n        main = \"가벼운 긴팔 위주\";\n        sub = \"맨투맨, 셔츠, 가벼운 자켓 정도면 충분한 날씨입니다.\";\n    } else if (t <= 28) {\n        outfitIcon = \"🩳\";\n        main = \"약간 더운 날씨, 시원하게\";\n        sub = \"반팔 + 얇은 하의, 햇볕이 강하면 모자도 추천합니다.\";\n    } else {\n        outfitIcon = \"🔥\";\n        main = \"한여름 날씨, 최대한 시원하게\";\n        sub = \"통풍 잘 되는 반팔/반바지, 얇은 소재 위주로 입으세요.\";\n    }\n}\n\nvar outfitMsg = {\n    payload: {\n        icon: outfitIcon,\n        main: main,\n        sub: sub,\n        temp: t,\n        hum: reh\n    }\n};\n\nvar umbrellaIcon = \"☂️\";\nvar uMain = \"우산 정보를 계산 중입니다.\";\nvar uSub = \"강수량과 강수 형태를 기반으로 안내합니다.\";\n\nif (pty === \"0\" && rn1 === 0) {\n    umbrellaIcon = \"🌤\";\n    uMain = \"우산 필요 없음\";\n    uSub = \"강수 없음. 하늘만 한 번 확인하면 충분합니다.\";\n} else if (rn1 > 0 && rn1 < 1) {\n    umbrellaIcon = \"🌦\";\n    uMain = \"약한 비, 접이식 우산 권장\";\n    uSub = \"짧은 이동이면 모자/후드로도 버틸 수 있지만 우산 있으면 마음이 편합니다.\";\n} else if (rn1 >= 1) {\n    umbrellaIcon = \"☔\";\n    uMain = \"우산 필수\";\n    uSub = \"비가 제법 내릴 수 있는 날씨입니다. 튼튼한 우산을 준비하세요.\";\n}\n\nvar umbMsg = {\n    payload: {\n        icon: umbrellaIcon,\n        main: uMain,\n        sub: uSub,\n        rn1: rn1,\n        pty: pty\n    }\n};\n\nreturn [outfitMsg, umbMsg];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 1040,
+        "wires": [
+            [
+                "tmpl_outfit_card"
+            ],
+            [
+                "tmpl_umbrella_card"
+            ]
+        ]
+    },
+    {
+        "id": "tmpl_outfit_card",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "94be1d80c6a731da",
+        "name": "오늘의 옷 추천",
+        "order": 8,
+        "width": 12,
+        "height": 4,
+        "format": "<div class=\"away-card outfit-card\">\n  <div class=\"away-card-icon\">\n    {{msg.payload.icon || '🧥'}}\n  </div>\n  <div class=\"away-card-body\">\n    <div class=\"away-card-title\">오늘의 옷 추천</div>\n    <div class=\"away-card-main\">\n      {{msg.payload.main || '데이터 수신 대기 중'}}\n    </div>\n    <div class=\"away-card-sub\">\n      {{msg.payload.sub || '외부 기온 정보를 가져오면 자동으로 추천합니다.'}}\n    </div>\n    <div class=\"away-card-meta\" ng-if=\"msg.payload.temp !== undefined\">\n      기준 기온 {{msg.payload.temp}}℃ · 습도 {{msg.payload.hum}}%\n    </div>\n  </div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "away-card outfit-card",
+        "x": 680,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "tmpl_umbrella_card",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "94be1d80c6a731da",
+        "name": "우산 / 날씨 안내",
+        "order": 10,
+        "width": 12,
+        "height": 4,
+        "format": "<div class=\"away-card umbrella-card\">\n    <div class=\"away-card-icon\">\n        {{msg.payload.icon || '☂️'}}\n    </div>\n    <div class=\"away-card-body\">\n        <div class=\"away-card-title\">우산 / 날씨 체크</div>\n        <div class=\"away-card-main\">\n            {{msg.payload.main || '데이터 수신 대기 중'}}\n        </div>\n        <div class=\"away-card-sub\">\n            {{msg.payload.sub || '강수량과 강수 형태를 기반으로 안내합니다.'}}\n        </div>\n        <div class=\"away-card-meta\" ng-if=\"msg.payload.rn1 !== undefined\">\n            최근 1시간 강수량 {{msg.payload.rn1}}mm · PTY {{msg.payload.pty}}\n        </div>\n    </div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "away-card umbrella-card",
+        "x": 690,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "mqtt_away_alert_events",
+        "type": "mqtt in",
+        "z": "987ee1b44fee7f84",
+        "name": "Alert in (이벤트 집계용)",
+        "topic": "home/alert",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker_local",
+        "nl": false,
+        "rap": false,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 1200,
+        "wires": [
+            [
+                "func_away_events"
+            ]
+        ]
+    },
+    {
+        "id": "func_away_events",
+        "type": "function",
+        "z": "987ee1b44fee7f84",
+        "name": "오늘 이벤트 집계",
+        "func": "var raw = String(msg.payload || \"\").trim();\nif (!raw) {\n    return null;\n}\n\nvar now = new Date();\nvar todayStr = now.toISOString().slice(0, 10);\nvar storedDay = flow.get(\"awayEventsTodayDate\");\nvar events = flow.get(\"awayEventsToday\") || [];\n\nif (storedDay !== todayStr) {\n    events = [];\n}\n\nvar h = String(now.getHours()).padStart(2, \"0\");\nvar m = String(now.getMinutes()).padStart(2, \"0\");\nvar timeLabel = h + \":\" + m;\n\nvar label;\nif (raw === \"LOUD\") {\n    label = \"큰 소리 감지\";\n} else if (raw === \"INTRUSION\") {\n    label = \"침입(인체 감지)\";\n} else {\n    label = raw;\n}\n\nevents.push({\n    time: timeLabel,\n    type: raw,\n    label: label\n});\n\nif (events.length > 20) {\n    events = events.slice(events.length - 20);\n}\n\nflow.set(\"awayEventsToday\", events);\nflow.set(\"awayEventsTodayDate\", todayStr);\n\nmsg.payload = events;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1200,
+        "wires": [
+            [
+                "tmpl_away_events"
+            ]
+        ]
+    },
+    {
+        "id": "tmpl_away_events",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "94be1d80c6a731da",
+        "name": "오늘의 보안 이벤트",
+        "order": 16,
+        "width": 25,
+        "height": 5,
+        "format": "<div class=\"away-events-card\">\n  <div class=\"header\">\n    <div class=\"title\">오늘의 보안 이벤트</div>\n    <div class=\"subtitle\">최근 20개까지 표시됩니다.</div>\n  </div>\n\n  <div class=\"list\" ng-if=\"msg.payload && msg.payload.length\">\n    <div class=\"row\" ng-repeat=\"e in msg.payload\">\n      <div class=\"time\">{{e.time}}</div>\n      <div class=\"badge\"\n           ng-class=\"{'intrusion': e.type === 'INTRUSION', 'sound': e.type === 'LOUD'}\">\n        {{e.label}}\n      </div>\n    </div>\n  </div>\n\n  <div class=\"empty\" ng-if=\"!msg.payload || !msg.payload.length\">\n    오늘은 아직 기록된 이벤트가 없습니다.\n  </div>\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "away-events-card",
+        "x": 710,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f581c459ac27f594",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "94be1d80c6a731da",
+        "name": "",
+        "order": 2,
+        "width": 5,
+        "height": 2,
+        "format": "<div style=\"\n  padding:10px 14px;\n  border-radius:12px;\n  background:#0b1a2b;\n  color:#f1f3f5;\n  box-shadow:0 2px 6px rgba(0,0,0,0.35);\n  display:flex;\n  align-items:center;\n  gap:12px;\n\">\n  <div style=\"\n    width:36px; height:36px;\n    border-radius:50%;\n    border:2px solid {{msg.payload.color}};\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    font-size:20px;\n  \">\n    {{msg.payload.icon}}\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; gap:3px;\">\n    <div style=\"font-size:12px; opacity:0.7;\">\n      {{msg.payload.label}}\n    </div>\n\n    <div style=\"font-size:22px; font-weight:600; line-height:1.1;\">\n      {{msg.payload.value}}\n      <span style=\"font-size:12px; opacity:0.8; margin-left:2px;\">\n        {{msg.payload.unit}}\n      </span>\n    </div>\n\n    <div style=\"font-size:11px; opacity:0.7; min-height:14px;\">\n      {{msg.payload.desc}}\n    </div>\n  </div>\n\n  <div style=\"\n    width:4px;\n    align-self:stretch;\n    border-radius:999px;\n    background:{{msg.payload.color}};\n  \"></div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1160,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fa2435a1cf3e816d",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "94be1d80c6a731da",
+        "name": "",
+        "order": 3,
+        "width": 5,
+        "height": 2,
+        "format": "<div style=\"\n  padding:10px 14px;\n  border-radius:12px;\n  background:#0b1a2b;\n  color:#f1f3f5;\n  box-shadow:0 2px 6px rgba(0,0,0,0.35);\n  display:flex;\n  align-items:center;\n  gap:12px;\n\">\n  <div style=\"\n    width:36px; height:36px;\n    border-radius:50%;\n    border:2px solid {{msg.payload.color}};\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    font-size:20px;\n  \">\n    {{msg.payload.icon}}\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; gap:3px;\">\n    <div style=\"font-size:12px; opacity:0.7;\">\n      {{msg.payload.label}}\n    </div>\n\n    <div style=\"font-size:22px; font-weight:600; line-height:1.1;\">\n      {{msg.payload.value}}\n      <span style=\"font-size:12px; opacity:0.8; margin-left:2px;\">\n        {{msg.payload.unit}}\n      </span>\n    </div>\n\n    <div style=\"font-size:11px; opacity:0.7; min-height:14px;\">\n      {{msg.payload.desc}}\n    </div>\n  </div>\n\n  <div style=\"\n    width:4px;\n    align-self:stretch;\n    border-radius:999px;\n    background:{{msg.payload.color}};\n  \"></div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1160,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c588f3ac444be886",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "94be1d80c6a731da",
+        "name": "",
+        "order": 4,
+        "width": 5,
+        "height": 2,
+        "format": "<div style=\"\n  padding:10px 14px;\n  border-radius:12px;\n  background:#0b1a2b;\n  color:#f1f3f5;\n  box-shadow:0 2px 6px rgba(0,0,0,0.35);\n  display:flex;\n  align-items:center;\n  gap:12px;\n\">\n  <div style=\"\n    width:36px; height:36px;\n    border-radius:50%;\n    border:2px solid {{msg.payload.color}};\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    font-size:20px;\n  \">\n    {{msg.payload.icon}}\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; gap:3px;\">\n    <div style=\"font-size:12px; opacity:0.7;\">\n      {{msg.payload.label}}\n    </div>\n\n    <div style=\"font-size:22px; font-weight:600; line-height:1.1;\">\n      {{msg.payload.value}}\n      <span style=\"font-size:12px; opacity:0.8; margin-left:2px;\">\n        {{msg.payload.unit}}\n      </span>\n    </div>\n\n    <div style=\"font-size:11px; opacity:0.7; min-height:14px;\">\n      {{msg.payload.desc}}\n    </div>\n  </div>\n\n  <div style=\"\n    width:4px;\n    align-self:stretch;\n    border-radius:999px;\n    background:{{msg.payload.color}};\n  \"></div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1160,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "74ae387ec1edcb13",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "94be1d80c6a731da",
+        "name": "",
+        "order": 5,
+        "width": 5,
+        "height": 2,
+        "format": "<div style=\"\n  padding:10px 14px;\n  border-radius:12px;\n  background:#0b1a2b;\n  color:#f1f3f5;\n  box-shadow:0 2px 6px rgba(0,0,0,0.35);\n  display:flex;\n  align-items:center;\n  gap:12px;\n\">\n  <div style=\"\n    width:36px; height:36px;\n    border-radius:50%;\n    border:2px solid {{msg.payload.color}};\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    font-size:20px;\n  \">\n    {{msg.payload.icon}}\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; gap:3px;\">\n    <div style=\"font-size:12px; opacity:0.7;\">\n      {{msg.payload.label}}\n    </div>\n\n    <div style=\"font-size:22px; font-weight:600; line-height:1.1;\">\n      {{msg.payload.value}}\n      <span style=\"font-size:12px; opacity:0.8; margin-left:2px;\">\n        {{msg.payload.unit}}\n      </span>\n    </div>\n\n    <div style=\"font-size:11px; opacity:0.7; min-height:14px;\">\n      {{msg.payload.desc}}\n    </div>\n  </div>\n\n  <div style=\"\n    width:4px;\n    align-self:stretch;\n    border-radius:999px;\n    background:{{msg.payload.color}};\n  \"></div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1180,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c146f6e887417227",
+        "type": "ui_template",
+        "z": "987ee1b44fee7f84",
+        "group": "94be1d80c6a731da",
+        "name": "",
+        "order": 6,
+        "width": 5,
+        "height": 2,
+        "format": "<div style=\"\n  padding:10px 14px;\n  border-radius:12px;\n  background:#0b1a2b;\n  color:#f1f3f5;\n  box-shadow:0 2px 6px rgba(0,0,0,0.35);\n  display:flex;\n  align-items:center;\n  gap:12px;\n\">\n  <div style=\"\n    width:36px; height:36px;\n    border-radius:50%;\n    border:2px solid {{msg.payload.color}};\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    font-size:20px;\n  \">\n    {{msg.payload.icon}}\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; gap:3px;\">\n    <div style=\"font-size:12px; opacity:0.7;\">\n      {{msg.payload.label}}\n    </div>\n\n    <div style=\"font-size:22px; font-weight:600; line-height:1.1;\">\n      {{msg.payload.value}}\n      <span style=\"font-size:12px; opacity:0.8; margin-left:2px;\">\n        {{msg.payload.unit}}\n      </span>\n    </div>\n\n    <div style=\"font-size:11px; opacity:0.7; min-height:14px;\">\n      {{msg.payload.desc}}\n    </div>\n  </div>\n\n  <div style=\"\n    width:4px;\n    align-self:stretch;\n    border-radius:999px;\n    background:{{msg.payload.color}};\n  \"></div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1160,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0da1d92481da95da",
+        "type": "ui_switch",
+        "z": "987ee1b44fee7f84",
+        "name": "모드 스위치",
+        "label": "모드 전환 (HOME/AWAY)",
+        "tooltip": "",
+        "group": "94be1d80c6a731da",
+        "order": 1,
+        "width": 25,
+        "height": 2,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "HOME",
+        "onvalueType": "str",
+        "onicon": "fa-sign-out",
+        "oncolor": "#60a5fa",
+        "offvalue": "AWAY",
+        "offvalueType": "str",
+        "officon": "fa-home",
+        "offcolor": "#f87171",
+        "animate": true,
+        "className": "",
+        "x": 130,
+        "y": 380,
+        "wires": [
+            [
+                "5b0b1f4ab9a51c2d",
+                "c2dc435409f37222"
+            ]
+        ]
+    },
+    {
+        "id": "86ef9719a6ce3034",
+        "type": "ui_template",
+        "z": "bb91c10fcdc8b02e",
+        "group": "ui_group_sleep_main",
+        "name": "수면 모드 토글",
+        "order": 1,
+        "width": 24,
+        "height": 2,
+        "format": "<style>\n  .sleep-card {\n    background:#0a1624;\n    border-radius:20px;\n    padding:18px 22px;\n    box-shadow:0 12px 28px rgba(0,0,0,0.6);\n    border:1px solid rgba(148,163,184,0.4);\n    color:#e5e7eb;\n  }\n  .sleep-card-header {\n    display:flex;\n    justify-content:space-between;\n    align-items:center;\n    margin-bottom:6px;\n  }\n  .sleep-card-title {\n    font-size:16px;\n    font-weight:700;\n  }\n  .sleep-card-sub {\n    font-size:13px;\n    color:#9ca3af;\n  }\n  .sleep-toggle {\n    cursor:pointer;\n    display:inline-flex;\n    align-items:center;\n    gap:8px;\n    padding:4px 10px;\n    border-radius:999px;\n    background:#020617;\n    border:1px solid #4b5563;\n    transition:all 0.2s ease;\n  }\n  .sleep-toggle-knob {\n    width:20px;\n    height:20px;\n    border-radius:999px;\n    background:#4b5563;\n    transition:all 0.2s ease;\n    transform:translateX(0);\n  }\n  .sleep-toggle-text {\n    font-size:12px;\n  }\n  .sleep-toggle.on {\n    background:#0f766e;\n    border-color:#5eead4;\n  }\n  .sleep-toggle.on .sleep-toggle-knob {\n    background:#a7f3d0;\n    transform:translateX(14px);\n  }\n</style>\n\n<div class=\"sleep-card\">\n  <div class=\"sleep-card-header\">\n    <div class=\"sleep-card-title\">수면 모드</div>\n    <div class=\"sleep-toggle\" ng-class=\"{on: sleepOn}\" ng-click=\"toggleSleep()\">\n      <div class=\"sleep-toggle-knob\"></div>\n      <span class=\"sleep-toggle-text\">{{ sleepOn ? '수면 진행 중' : '수면 시작' }}</span>\n    </div>\n  </div>\n  <div class=\"sleep-card-sub\">\n    {{ sleepOn ? 'MIC 소음 이벤트를 기록하고 있습니다.' : '토글을 켜면 수면 모드를 시작합니다.' }}\n  </div>\n</div>\n\n<script>\n(function(scope){\n  scope.sleepOn = false;\n  scope.toggleSleep = function(){\n    scope.sleepOn = !scope.sleepOn;\n    var on = scope.sleepOn;\n    scope.send({\n      topic: on ? \"home/mode/SLEEP\" : \"home/mode/WAKE\",\n      payload: on ? \"1\" : \"0\"\n    });\n  };\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 220,
+        "y": 100,
+        "wires": [
+            [
+                "5c522c1ce7e25e56",
+                "8c5a4417fe104a95"
+            ]
+        ]
+    },
+    {
+        "id": "5c522c1ce7e25e56",
+        "type": "function",
+        "z": "bb91c10fcdc8b02e",
+        "name": "sleepActive 갱신",
+        "func": "var topic = String(msg.topic || \"\");\nvar sleepOn = (topic === \"home/mode/SLEEP\");\n\nglobal.set('sleepActive', sleepOn);\n\nif (sleepOn) {\n    global.set('sleepNoiseData', []);\n    global.set('sleepStart', Date.now());\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8c5a4417fe104a95",
+        "type": "mqtt out",
+        "z": "bb91c10fcdc8b02e",
+        "name": "Sleep mode MQTT",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "mqtt_broker_local",
+        "x": 520,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "f278aae7cd400bb0",
+        "type": "mqtt in",
+        "z": "bb91c10fcdc8b02e",
+        "name": "센서 입력 (home/sensors)",
+        "topic": "home/sensors",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "mqtt_broker_local",
+        "nl": false,
+        "rap": false,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 260,
+        "wires": [
+            [
+                "cd436eb92168321a"
+            ]
+        ]
+    },
+    {
+        "id": "cd436eb92168321a",
+        "type": "function",
+        "z": "bb91c10fcdc8b02e",
+        "name": "수면 소음 수집",
+        "func": "var sleepActive = global.get('sleepActive') || false;\nif (!sleepActive) {\n    return null;\n}\n\nvar data = global.get('sleepNoiseData') || [];\n\nvar loud = 0;\nif (msg.payload && msg.payload.loud !== undefined) {\n    loud = Number(msg.payload.loud) ? 1 : 0;\n}\n\nvar point = {\n    t: Date.now(),\n    loud: loud\n};\n\ndata.push(point);\n\nif (data.length > 240) {\n    data = data.slice(data.length - 240);\n}\n\nglobal.set('sleepNoiseData', data);\n\nmsg.payload = data;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 260,
+        "wires": [
+            [
+                "504a6fe6c6e6cf2a"
+            ]
+        ]
+    },
+    {
+        "id": "504a6fe6c6e6cf2a",
+        "type": "ui_template",
+        "z": "bb91c10fcdc8b02e",
+        "group": "ui_group_sleep_main",
+        "name": "수면 소음 패턴",
+        "order": 3,
+        "width": 24,
+        "height": 4,
+        "format": "<div style=\"padding:16px 18px;\">\n  <div style=\"font-size:16px;font-weight:700;margin-bottom:4px;\">수면 소음 패턴</div>\n  <div style=\"font-size:12px;color:#9ca3af;margin-bottom:10px;\">최근 2분 동안의 소음 이벤트 (주황색 = 소음)</div>\n  <div id=\"sleepGraph\" style=\"display:flex;align-items:flex-end;gap:2px;height:40px;\"></div>\n</div>\n<script>\n(function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (!msg || !msg.payload) return;\n    var data = msg.payload;\n    var el = document.getElementById('sleepGraph');\n    if (!el) return;\n    el.innerHTML = \"\";\n    var maxBars = 120;\n    var start = data.length > maxBars ? data.length - maxBars : 0;\n    for (var i = start; i < data.length; i++) {\n      var item = data[i] || {};\n      var loud = Number(item.loud) ? 1 : 0;\n      var bar = document.createElement('div');\n      bar.style.flex = \"1\";\n      bar.style.height = \"100%\";\n      bar.style.borderRadius = \"999px\";\n      bar.style.background = loud ? \"linear-gradient(to top,#f97316,#fed7aa)\" : \"#111827\";\n      bar.style.opacity = loud ? \"1\" : \"0.35\";\n      el.appendChild(bar);\n    }\n  });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 740,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "inj_sleep_noise_test",
+        "type": "inject",
+        "z": "bb91c10fcdc8b02e",
+        "name": "테스트 소음 이벤트",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"loud\":1}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 520,
+        "wires": [
+            [
+                "cd436eb92168321a"
+            ]
+        ]
+    },
+    {
+        "id": "ff3af01a77743ac2",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]

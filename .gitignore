@@ -1,0 +1,11 @@
+# secrets — do not commit real values
+secrets.h
+*.local
+.env
+
+# build / editor
+build/
+*.hex
+*.bin
+.vscode/
+.DS_Store
