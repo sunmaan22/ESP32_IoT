@@ -50,15 +50,6 @@ ESP32 기반 센서 노드, MQTT 통신, Node-RED 대시보드, 외부 웹 API �
 
 ---
 
-## 👥 팀 구성 · 역할
-
-| 담당 | 영역 | 내용 |
-|---|---|---|
-| **배선민** | 하드웨어 · 펌웨어 | ESP32 센서 노드 회로 구성(온습도·조도·가스·마이크·PIR·LED·부저), 주기적 센서 리드 펌웨어, 센서값+모드를 JSON으로 묶어 `home/sensors` 등 MQTT 토픽으로 전송, HW 동작 시험·디버깅 |
-| **김가영** | Node-RED · 대시보드 · 서버 로직 | MQTT 연동 Node-RED 플로우 설계(`home/sensors` · `home/alert` · `home/mode/SLEEP` · `home/mode/WAKE` 구독·발행), 게이지·카드·차트 대시보드 UI, Function 노드 기반 파싱·모드 상태 관리·수면 데이터 누적·쾌적도/불쾌지수 계산, 기상청·텔레그램 연동, `ui_template`·Chart.js·커스텀 CSS |
-
----
-
 ## 🧭 시스템 아키텍처
 
 ```mermaid
